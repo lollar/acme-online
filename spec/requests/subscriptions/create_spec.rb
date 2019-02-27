@@ -25,7 +25,10 @@ RSpec.describe "[POST] /api/v1/subscriptions" do
     it "returns :created status" do
       post create_subscription, params: params
 
+      data = JSON.parse(response.body).fetch('data', {}).deep_symbolize_keys
+
       expect(response).to have_http_status :created
+      expect(data).to eq({ name: "Bronze Box", price: "4999" })
     end
   end
 end
