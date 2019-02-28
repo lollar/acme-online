@@ -6,9 +6,10 @@ RSpec.describe "[POST] /api/v1/subscriptions" do
   subject(:create_subscription) { "/api/v1/subscriptions" }
 
   context "when valid data is provided" do
+    let(:plan) { Plan.find_by name: "Bronze Box" }
     let(:params) do
       {
-        plan_id: 1,
+        plan_id: plan.id,
         shipping: {
           name: "Bob Loblaw",
           address: "123 N Main St",
@@ -25,7 +26,7 @@ RSpec.describe "[POST] /api/v1/subscriptions" do
     it "returns :created status" do
       post create_subscription, params: params
 
-      data = JSON.parse(response.body).fetch('data', {}).deep_symbolize_keys
+      data = JSON.parse(response.body).fetch("data", {}).deep_symbolize_keys
 
       expect(response).to have_http_status :created
       expect(data).to eq({ name: "Bronze Box", price: "4999" })
