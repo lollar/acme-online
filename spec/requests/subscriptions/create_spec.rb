@@ -10,7 +10,7 @@ RSpec.describe "[POST] /api/v1/subscriptions" do
     let(:params) do
       {
         plan_id: plan.id,
-        shipping: {
+        customer: {
           name: "Bob Loblaw",
           address: "123 N Main St",
           zip_code: "00832",
@@ -29,7 +29,7 @@ RSpec.describe "[POST] /api/v1/subscriptions" do
       data = JSON.parse(response.body).fetch("data", {}).deep_symbolize_keys
 
       expect(response).to have_http_status :created
-      expect(data).to eq({ name: "Bronze Box", price: "4999" })
+      expect(data.keys).to contain_exactly :id, :customer_id, :plan_id, :due_on
     end
   end
 end
