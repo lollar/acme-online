@@ -5,7 +5,7 @@ require "rails_helper"
 RSpec.describe "[POST] /api/v1/subscriptions" do
   subject(:create_subscription) { "/api/v1/subscriptions" }
 
-  context "when valid data is provided" do
+  context "when valid data is provided", vcr: { cassette_name: "successful_post_subscriptions" } do
     let(:plan) { Plan.find_by name: "Bronze Box" }
     let(:params) do
       {
@@ -16,10 +16,10 @@ RSpec.describe "[POST] /api/v1/subscriptions" do
           zip_code: "00832",
         },
         billing: {
-          card_number: "4111111111111111",
-          exp_date: "07/19",
-          cvv: "100",
-          zip_code: "00835"
+          card_number: "4242424242424242",
+          exp_date: "01/2024",
+          cvv: "123",
+          zip_code: "10045"
         }
       }
     end

@@ -13,6 +13,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'vcr'
+  gem 'webmock', '3.5.1'
 end
 
 group :development do
