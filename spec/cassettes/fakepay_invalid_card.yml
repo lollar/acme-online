@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.fakepay.io/purchase
     body:
       encoding: US-ASCII
-      string: card_number=4242424242424242&cvv=123&expiration_month=01&expiration_year=2024&zip_code=10045&amount=1999
+      string: amount=1000&card_number=4242424242424241&expiration_month=01&expiration_year=2024&cvv=123&zip_code=10045
     headers:
       Authorization:
       - Token token=4a8e15497fc32fd13ad42da84b44b2
@@ -19,13 +19,13 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 422
+      message: Unprocessable Entity
     headers:
       Server:
       - Cowboy
       Date:
-      - Tue, 05 Mar 2019 00:57:44 GMT
+      - Tue, 05 Mar 2019 01:35:52 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -42,21 +42,19 @@ http_interactions:
       - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - W/"e2e25823b1b81076b1f958c670dc3ae0"
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - bc6f7fca-01ca-4ee4-9c08-8e3a4371d2ac
+      - f36d7c90-acd1-40eb-8f0c-f5355f1ebfcb
       X-Runtime:
-      - '0.025346'
+      - '0.022631'
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"32e243b421008d09bfb2d28c16588e","success":true,"error_code":null}'
+      string: '{"token":null,"success":false,"error_code":1000001}'
     http_version: 
-  recorded_at: Tue, 05 Mar 2019 00:57:41 GMT
+  recorded_at: Tue, 05 Mar 2019 01:35:49 GMT
 recorded_with: VCR 3.0.3
