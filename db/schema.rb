@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2019_02_28_164618) do
     t.integer "due_on", null: false
     t.bigint "customer_id"
     t.bigint "plan_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_subscriptions_on_customer_id"
     t.index ["plan_id"], name: "index_subscriptions_on_plan_id"
   end
