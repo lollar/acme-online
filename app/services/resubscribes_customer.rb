@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ResubscribesCustomer
-  def self.resubscribe date: Date.today
+  def self.resubscribe date:
     new(date).resubscribe
   end
 
@@ -21,7 +21,7 @@ class ResubscribesCustomer
   attr_reader :date
 
   def build_query_string
-    if date == date.end_of_month
+    if date == Date.civil(date.year, date.month, -1)
       "due_on >= #{date.day}"
     else
       "due_on = #{date.day}"
