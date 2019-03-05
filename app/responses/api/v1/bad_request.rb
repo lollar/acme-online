@@ -3,12 +3,20 @@
 module API
   module V1
     class BadRequest < StandardError
-      attr_reader :status, :errors
-
       def initialize errors = {}
-        @status = :bad_request
         @errors = errors
       end
+
+      def result
+        {
+          json: { errors: "#{errors} is/are required" },
+          status: :bad_request
+        }
+      end
+
+      private
+
+      attr_reader :errors
     end
   end
 end
