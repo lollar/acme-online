@@ -17,12 +17,14 @@ RSpec.describe "[POST] /api/v1/subscriptions" do
         },
         billing: {
           card_number: "4242424242424242",
-          exp_date: "01/2024",
+          expiration_month: "01",
+          expiration_year: "2024",
           cvv: "123",
           zip_code: "10045"
         }
       }
     end
+
     it "returns :created status" do
       post create_subscription, params: params
 
