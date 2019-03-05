@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+ResubscribesCustomer.resubscribe date: Date.today
