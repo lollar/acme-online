@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.fakepay.io/purchase
+    body:
+      encoding: US-ASCII
+      string: card_number=4242424242424242&cvv=101&expiration_month=01&expiration_year=2024&zip_code=10045&amount=1999
+    headers:
+      Authorization:
+      - Token token=4a8e15497fc32fd13ad42da84b44b2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 05 Mar 2019 04:36:28 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 665479ca-21df-46e8-8254-939bf752fa3f
+      X-Runtime:
+      - '0.047400'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":null,"success":false,"error_code":1000003}'
+    http_version: 
+  recorded_at: Tue, 05 Mar 2019 04:36:27 GMT
+recorded_with: VCR 3.0.3
