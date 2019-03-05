@@ -18,6 +18,8 @@ module API
       validates :zip_code, presence: true, length: { is: 5 }
 
       def self.build params
+        return {} if params.empty?
+
         billing_params = new(params)
         billing_params.validate_params
         billing_params.attributes

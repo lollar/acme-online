@@ -21,7 +21,7 @@ RSpec.describe ::API::V1::BillingParams do
     end
 
     context "when parameters are missing required values" do
-      let(:params) { {} }
+      let(:params) { { card_number: "1234567890123456" } }
 
       specify { expect{ billing_params }.to raise_error ::API::V1::BadRequest }
     end

@@ -12,7 +12,7 @@ module API
       def initialize params
         @billing_params  = ::API::V1::BillingParams.build params.fetch(:billing, {})
         @customer_params = ::API::V1::CustomerParams.build params.fetch(:customer, {})
-        @plan_id         = params.fetch(:plan_id) { raise ::API::V1::BadRequest.new(:plan_id) }
+        @plan_id         = params.fetch(:plan_id) { raise ::API::V1::BadRequest.new :plan_id }
       end
     end
   end

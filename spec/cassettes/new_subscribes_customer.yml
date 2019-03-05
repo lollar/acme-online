@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.fakepay.io/purchase
+    body:
+      encoding: US-ASCII
+      string: card_number=4242424242424242&cvv=123&expiration_month=01&expiration_year=2024&zip_code=10045&amount=1999
+    headers:
+      Authorization:
+      - Token token=4a8e15497fc32fd13ad42da84b44b2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 05 Mar 2019 06:17:44 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9434507788b3be484afad79c11d052ad"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f129ff9f-c7c7-447f-b4ce-55875760b270
+      X-Runtime:
+      - '0.059977'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"8d162e1a2b1b80667c21ace505fbcf","success":true,"error_code":null}'
+    http_version: 
+  recorded_at: Tue, 05 Mar 2019 06:17:42 GMT
+recorded_with: VCR 3.0.3
